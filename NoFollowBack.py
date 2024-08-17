@@ -1,10 +1,13 @@
-#two slight issues, if someone changed their username, it will show up here and if
+'''
+two slight issues, if someone changed their username, it will show up here and if
 #username starts with number, not checked (easy fix)
+'''
 import pandas as pd
 import re
 
-filepath1 = '/Users/yousribouamara/Downloads/followers_1.csv'
-filepath2 = '/Users/yousribouamara/Downloads/following.csv'
+#use your filepath, \ or / depends on MacOS vs. PC
+filepath1 = '/Users/.../followers_1.csv'
+filepath2 = '/Users/.../following.csv'
 
 
 a = pd.read_csv(filepath1)
@@ -29,3 +32,17 @@ fers_set = set(fers)
 not_in_followers = [person for person in fing_filtered if person not in fers_set]
 not_in_followers.remove('Accounts you choose to see content from')
 print(not_in_followers)
+
+#lets inspect duplicates
+
+'''temp=[]
+fers_list = list(a)
+for person in a:
+    if fers_list.count(person) > 1:
+        temp.append(person)
+print(temp)
+
+fers_list = list(a)
+temp = [person for person in fers_list if fers_list.count(person) > 1 ]
+print(temp)
+'''
