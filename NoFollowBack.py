@@ -1,3 +1,5 @@
+#two slight issues, if someone changed their username, it will show up here and if
+#username starts with number, not checked (easy fix)
 import pandas as pd
 import re
 
